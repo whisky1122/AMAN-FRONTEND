@@ -1,22 +1,22 @@
-import React from 'react'
-import { createContext } from 'react'
-export const authDataContext= createContext()
-function AuthContext({children}) {
-    let serverUrl = "http://localhost:8000"
+import React from 'react';
+import { createContext } from 'react';
 
-    let value = {
-       serverUrl
-    }
-  return (
+// Context create किया
+export const authDataContext = createContext();
 
-    
-    <div>
+function AuthContext({ children }) {
+    // Production में deploy करने के बाद यहाँ backend का live URL डालना
+    const serverUrl = "http://localhost:8000";  
+
+    const value = {
+        serverUrl
+    };
+
+    return (
         <authDataContext.Provider value={value}>
             {children}
         </authDataContext.Provider>
-      
-    </div>
-  )
+    );
 }
 
-export default AuthContext
+export default AuthContext;
