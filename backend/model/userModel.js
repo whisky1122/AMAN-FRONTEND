@@ -13,6 +13,12 @@ const userSchema = new mongoose.Schema({
     password:{
         type:String
     },
+    phone: {
+        type: String
+    },
+    dateOfBirth: {
+        type: String
+    },
     cartData:{
         type:Object,
         default:{}
